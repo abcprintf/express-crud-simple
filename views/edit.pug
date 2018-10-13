@@ -1,0 +1,21 @@
+extends layout
+
+block content
+
+    h1= title
+
+    form(method='POST', action='/edit')
+        input(type='hidden', name='id', value=data[0]._id)
+        div.form-group
+            label Username :
+            input(type='text', class="form-control", name='username', value=data[0].username)
+
+        div.form-group
+            label Email :
+            input(type='email', class='form-control', name='email', value=data[0].email)
+
+        div.form-group
+            label Mobile :
+            input(type='text', class='form-control', name='mobile', value=data[0].mobile)
+
+        button(type='submit', class='btn btn-info') Update
